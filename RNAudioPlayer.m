@@ -4,8 +4,6 @@
 
 RCT_EXPORT_MODULE()
 
-AVAudioSession *session = [AVAudioSession sharedInstance];
-
 RCT_EXPORT_METHOD(play:(NSString *)fileName)
 {
     AVAudioSession *session = [AVAudioSession sharedInstance];
