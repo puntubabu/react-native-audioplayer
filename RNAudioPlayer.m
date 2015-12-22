@@ -4,6 +4,8 @@
 
 RCT_EXPORT_MODULE()
 
+AVAudioSession *session = [AVAudioSession sharedInstance];
+
 RCT_EXPORT_METHOD(play:(NSString *)fileName)
 {
     AVAudioSession *session = [AVAudioSession sharedInstance];
@@ -16,6 +18,16 @@ RCT_EXPORT_METHOD(play:(NSString *)fileName)
     self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:nil];
     
     [self.audioPlayer play];
+}
+
+RCT_EXPORT_METHOD(pause)
+{
+    [self.audioPlayer pause];
+}
+
+RCT_EXPORT_METHOD(stop)
+{
+    [self.audioPlayer stop];
 }
 
 @end

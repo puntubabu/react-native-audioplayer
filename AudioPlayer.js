@@ -7,6 +7,12 @@ var AudioPlayer = {
   play(fileName: string) {
     fileName = Platform.OS === 'ios' ? fileName : fileName.replace(/\.[^/.]+$/, "");
     RNAudioPlayer.play(fileName);
+  },
+  pause() {
+    RNAudioPlayer.pause();
+  },
+  stop() {
+    RNAudioPlayer.stop();
   }
 };
 
